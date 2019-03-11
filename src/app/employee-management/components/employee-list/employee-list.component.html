@@ -16,7 +16,8 @@
   </thead>
   <tbody>
     <tr *ngFor="let employee of employees$ | async"
-      (click)="selectEmployee(employee)">
+      (click)="selectEmployee(employee)"
+      [class.selected]="selectedEmployee === employee">
       <td>{{ employee.id }}</td>
       <td>{{ employee.firstName }} {{ employee.lastName }}</td>
       <td>{{ employee.title }}</td>
