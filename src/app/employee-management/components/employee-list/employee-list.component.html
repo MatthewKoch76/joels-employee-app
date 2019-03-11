@@ -1,5 +1,26 @@
-<ul>
+<!-- <ul>
   <li *ngFor="let employee of employees$ | async">
     {{ employee.firstName }}  {{ employee.lastName }}
   </li>
-</ul>
+</ul> -->
+
+<table>
+  <thead>
+    <tr>
+    <td>Id</td>
+    <td>Name</td>
+    <td>Title</td>
+    <td>LOS</td>
+    <td>Role</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employees$ | async">
+      <td>{{ employee.id }}</td>
+      <td>{{ employee.firstName }} {{ employee.lastName }}</td>
+      <td>{{ employee.title }}</td>
+      <td>{{ employee.lineOfService }}</td>
+      <td>{{ employee.role }}</td>
+    </tr>
+  </tbody>
+</table>

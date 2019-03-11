@@ -1,0 +1,36 @@
+table {
+  width: 100%;
+}
+
+thead {
+  font-size: 1.5rem;
+}
+
+tbody tr {
+  &:hover {
+      background: lightgray;
+      cursor: pointer;
+  }
+
+  &.selected:hover {
+      background: #889c3f;
+      color: ghostwhite;
+  }
+}
+
+.selected {
+  background: #789c3f;
+  color: ghostwhite;
+}
+
+.container {
+  grid-template-columns: min-content auto;
+  column-gap: 16px;
+  display: grid;
+  justify-items: start;
+  align-items: center;
+}
+
+.item {
+  grid-row: 1;
+}
