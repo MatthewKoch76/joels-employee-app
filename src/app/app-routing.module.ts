@@ -5,7 +5,8 @@ import { TitleListComponent } from './components/title-list/title-list.component
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'titles', component: TitleListComponent }
+  { path: 'titles', component: TitleListComponent },
+  { path: 'employee', loadChildren: './employee-management/employee-management.module#EmployeeManagementModule' }
 ];
 
 @NgModule({
