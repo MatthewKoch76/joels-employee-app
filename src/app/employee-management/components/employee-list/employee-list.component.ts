@@ -9,12 +9,18 @@ import { Employee } from 'src/app/shared/models/employee';
   styleUrls: ['./employee-list.component.scss']
 })
 export class EmployeeListComponent implements OnInit {
-employees$: Observable<Employee[]>;
+  employees$: Observable<Employee[]>;
+  selectedEmployee: Employee;
+
 
   constructor(private employeeService: EmployeeService) { }
 
   ngOnInit() {
     this.employees$ = this.employeeService.getEmployees();
+  }
+
+  public selectEmployee (employee: Employee) {
+    this.selectedEmployee = employee;
   }
 
 }
