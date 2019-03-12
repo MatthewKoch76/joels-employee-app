@@ -1,0 +1,28 @@
+<mat-card>
+  <h2>Edit Employee</h2>
+  <form [formGroup]="employeeForm" (ngSubmit)="submit()">
+    <mat-form-field>
+      <input matInput placeholder="First Name" formControlName="firstName">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Last Name" formControlName="lastName">
+    </mat-form-field>
+    <mat-form-field>
+        <!-- <input matInput placeholder="Title" formControlname="titles"> -->
+        <mat-select placeholder="Title" formControlName="title">
+          <mat-option *ngFor="let title of titles$ | async" [value]="title">
+            {{ title }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Line of Service" formControlName="lineOfService">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Role" formControlName="role">
+    </mat-form-field>
+
+    <button mat-raised-button [disabled]="!employeeForm.valid" color="primary">Update</button>
+    <button type="button" mat-raised-button (click)="cancel()" color="warn">Cancel</button>
+  </form>
+</mat-card>

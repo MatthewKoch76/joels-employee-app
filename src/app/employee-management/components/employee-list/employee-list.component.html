@@ -26,7 +26,6 @@
     </tr>
   </tbody>
 </table>
-
-<div>
-  {{ selectedEmployee | json }}
+<div *ngIf="selectedEmployee">
+<app-employee-editor [(employee)]="selectedEmployee"></app-employee-editor>
 </div>

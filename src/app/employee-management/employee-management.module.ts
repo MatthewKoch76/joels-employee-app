@@ -11,9 +11,11 @@ import {
 
 import { EmployeeManagementRoutingModule } from './employee-management-routing.module';
 import { EmployeeListComponent } from './components/employee-list/employee-list.component';
+import { EmployeeEditorComponent } from './components/employee-editor/employee-editor.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [EmployeeListComponent],
+  declarations: [EmployeeListComponent, EmployeeEditorComponent],
   imports: [
     CommonModule,
     EmployeeManagementRoutingModule,
@@ -21,7 +23,8 @@ import { EmployeeListComponent } from './components/employee-list/employee-list.
     MatInputModule,
     MatCardModule,
     MatSelectModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    ReactiveFormsModule
   ]
 })
 export class EmployeeManagementModule { }
